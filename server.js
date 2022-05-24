@@ -44,10 +44,10 @@ app.get('/products/seed', (req, res) => {
 
 // INDEX 
 
-app.get('/products/', (req, res) => {
+app.get('/products', (req, res) => {
     Product.find({}, (error, allProducts) => {
         res.render('index.ejs', {
-            products : allProducts,
+            products: allProducts,
         });
         
     });
@@ -61,7 +61,7 @@ app.get('/products/new', (req, res) => {
 
 //D
 //CREATE
-app.post('/products/', (req, res)=> {
+app.post('/products', (req, res)=> {
     Product.create(req.body, (error, createdProduct) => {
         res.redirect('/products');
     });
