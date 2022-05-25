@@ -11,12 +11,12 @@
           description: 'It\'s just a bag of bones.',
           img: 'https://imgur.com/dalOqwk.png',
           price: 25,
-          qty: 0
+          qty: 5
         }, {
           name: 'Bins',
           description: 'A stack of colorful bins for your beans and bones.',
           img: 'https://imgur.com/ptWDPO1.png',
           price: 7000,
-          qty: 1
+          qty: 5
         }
       ]

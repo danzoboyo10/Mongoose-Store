@@ -1,26 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
-	</head>
-	<body>
-		<nav>
-			<a href="/products">Back to the Products Index</a>
-		</nav>
-		<h1><%=product.name %></h1>
-		Descripton: <%= product.description%>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Document</title>
+</head>
+
+<body>
+	<nav>
+		<a href="/products">Back to the Products Index</a>
+	</nav>
+	<h1>
+		<%=product.name %>
+	</h1>
+	Descripton: <%= product.description%>
 		<br />
-		Image: <%= product.img%>
+		Image: <img src="<%=product.img; %>" />
 		<br />
 		Price: <%= product.price%>
-		<br />
-		Quantity: <%= product.qty%>
-        
-        <nav>
-			<a href="/products/edit/">Edit Product</a>
-		</nav>
-	</body>
+			<br />
+			Quantity: <%= product.qty%>
+				<form action="/products/<%= product._id %>?_method=DELETE" method="POST"
+					style="display: inline; margin-left: 16px;">
+					<nav>
+						<input type="submit" value="DELETE" />
+
+						<a href="/products/<%=product._id%>/edit">Edit Product</a>
+
+				<% if(product.qty > 0) { %>
+					<form action="/products/<%=product._id%>/buy" method="POST"> <input type="submit" value="BUY" />
+
+					</form>
+				<% } else { %>
+					Out of Stock
+				<%}  %>
+
+
+					</nav>
+</body>
+
 </html>
