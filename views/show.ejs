@@ -8,7 +8,7 @@
 	<title>Document</title>
 </head>
 
-<body>
+<body style="background-color:paleturquoise;">
 	<nav>
 		<a href="/products">Back to the Products Index</a>
 	</nav>
@@ -24,10 +24,11 @@
 			Quantity: <%= product.qty%>
 				<form action="/products/<%= product._id %>?_method=DELETE" method="POST"
 					style="display: inline; margin-left: 16px;">
-					<nav>
 						<input type="submit" value="DELETE" />
+						</form>
 
 						<a href="/products/<%=product._id%>/edit">Edit Product</a>
+
 
 				<% if(product.qty > 0) { %>
 					<form action="/products/<%=product._id%>/buy" method="POST"> <input type="submit" value="BUY" />
@@ -38,7 +39,6 @@
 				<%}  %>
 
 
-					</nav>
 </body>
 
 </html>
